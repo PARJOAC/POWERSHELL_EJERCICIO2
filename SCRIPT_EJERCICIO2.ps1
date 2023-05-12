@@ -1,10 +1,10 @@
 ﻿
 function FILE_SHUTDOWN(){
-$WshShell = New-Object -ComObject WScript.Shell
-$Shortcut = $WshShell.CreateShortcut("$($env:USERPROFILE)\Videos\Apagar.lnk")
-$Shortcut.TargetPath = "shutdown.exe"
-$Shortcut.Arguments = "/s /t 60 /c `"El equipo se apagará en 1 minuto`""
-$Shortcut.Save()
+$Objeto = New-Object -ComObject WScript.Shell
+$Acceso = $Objeto.CreateShortcut("$($env:USERPROFILE)\Videos\Apagar.lnk")
+$Acceso.TargetPath = "shutdown.exe"
+$Acceso.Arguments = "/s /t 60 /c `"El equipo se apagará en 1 minuto`""
+$Acceso.Save()
 }
 
 function SHUTDOWN(){
@@ -12,11 +12,11 @@ Start-Process -FilePath "$($env:USERPROFILE)\Videos\Apagar.lnk"
 }
 
 function FILE_CANCEL(){
-$WshShell = New-Object -ComObject WScript.Shell
-$Shortcut = $WshShell.CreateShortcut("$($env:USERPROFILE)\Videos\Detener.lnk")
-$Shortcut.TargetPath = "shutdown.exe"
-$Shortcut.Arguments = "/a"
-$Shortcut.Save()
+$Objeto = New-Object -ComObject WScript.Shell
+$Acceso = $Objeto.CreateShortcut("$($env:USERPROFILE)\Videos\Detener.lnk")
+$Acceso.TargetPath = "shutdown.exe"
+$Acceso.Arguments = "/a"
+$Acceso.Save()
 }
 
 #function CANCEL(){
